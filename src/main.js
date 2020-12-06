@@ -3,6 +3,7 @@
 // cuando se haga un load o una recarga de nuestra pagina
 //--------------------------------------------------------
 import { changeView } from './controller/route.js';
+import { currentUser } from './controller/controller-firebase.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -21,15 +22,18 @@ firebase.initializeApp(firebaseConfig);
 //-------------------------------------------------------------
 
 // Funcion para cambiar la url usando el evento "hashchange"
-const init = (user) => {
+const updateRoute = () => {
+  const user = currentUser();
   // 'location' es una propiedad del objeto windowns que nos dice si la pagina ha cambiado
   // ejecuta una funcion que escuha el cambio de la url
   changeView(window.location.hash, user);
   // para traer todo lo que esta despues del #
-  window.addEventListener('hashchange', () => changeView(window.location.hash, user));
 };
 
-firebase.auth().onAuthStateChanged(init);
-
 // cada vez que escuches que haya una recarga ejecutame esta funcion
-// window.addEventListener('load', init);
+window.addEventListener('load', () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    changeView(window.location.hash, user);
+  });
+  window.addEventListener('hashchange', updateRoute);
+});
