@@ -10,15 +10,14 @@ export const logIn = (email, password) => {
   return auth.signInWithEmailAndPassword(email, password);
 };
 
+// Cerrar Sesion
+export const signOut = () => firebase.auth().signOut();
+
+// Capturar usurio actual
+export const currentUser = () => firebase.auth().currentUser;
+
 // Enviar email para verificar cuenta
 export const sendEmailCheck = () => {
   const user = firebase.auth().currentUser;
   return user.sendEmailVerification();
 };
-// Cerrar Sesion
-export const signOut = () => firebase.auth().signOut();
-
-// Usuario creado ingresa con google
-
-// Capturar usurio actual
-export const currentUser = () => firebase.auth().currentUser;

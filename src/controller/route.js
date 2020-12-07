@@ -1,7 +1,7 @@
 import { components } from '../view/index.js';
 
 // Creando controlador para asociar el cambio de la ruta con las vistas
-// Fucion para asociar vistas , que recibe la ruta que vamos a traer de
+// Fucion para asociar vistas , que recibe la ruta que vamos a traer
 
 export const changeView = (route, user) => {
   const container = document.querySelector('#container');
@@ -30,6 +30,6 @@ export const changeView = (route, user) => {
         break;
     }
   }
-  // console.log(route);
+  // console.log(route)
   return userRoute;
 };

@@ -33,41 +33,36 @@ export default () => {
 </header>
 <main>
   <form id="formPost">
-  <textarea id="postMensajeInput"></textarea>
-  <button type="button" id="publicartbutton">PUBLICAR</button>
+    <textarea id="postMensajeInput"></textarea>
+    <button type="button" id="publicartbutton">PUBLICAR</button>
   </form>
 
   <ul id="listado"></ul>
-
 </main>
 <aside></aside>
   `;
   // Insertando el template en la interfaz
   const sectionElement = document.createElement('section');
-  // sectionElement.classList.add('position');
   sectionElement.innerHTML = homeView;
 
   // Accion del boton SignOut
   const signOutButton = sectionElement.querySelector('#signOutbutton');
-
   signOutButton.addEventListener('click', () => {
     homeController.actionSignOut();
   });
+
   // Accion del boton publicar
   const publicarBtn = sectionElement.querySelector('#publicartbutton');
-
   publicarBtn.addEventListener('click', () => {
     homeController.actionPublicar(sectionElement);
   });
+
   // Pintando post en el home
   const ulElement = sectionElement.querySelector('#listado');
-
-
   const printPost = (dataPost) => {
     const liTemplate = `
             <h5>${dataPost.autor} -  ${dataPost.fecha} </h5>
             <p>${dataPost.post}</p>
-            
         `;
     // Insertando el template en la interfaz
     const liElement = document.createElement('li');
