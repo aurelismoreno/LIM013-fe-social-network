@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import { homeController } from '../view-controller/home-controller.js';
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
@@ -31,10 +32,13 @@ export default () => {
   </section>
 </header>
 <main>
-  <form id="post">
+  <form id="formPost">
   <textarea id="postMensajeInput"></textarea>
   <button type="button" id="publicartbutton">PUBLICAR</button>
   </form>
+
+  <ul id="listado"></ul>
+
 </main>
 <aside></aside>
   `;
@@ -54,6 +58,38 @@ export default () => {
 
   publicarBtn.addEventListener('click', () => {
     homeController.actionPublicar(sectionElement);
+  });
+  // Pintando post en el home
+  const ulElement = sectionElement.querySelector('#listado');
+
+
+  const printPost = (dataPost) => {
+    const liTemplate = `
+            <h5>${dataPost.autor} -  ${dataPost.fecha} </h5>
+            <p>${dataPost.post}</p>
+            
+        `;
+    // Insertando el template en la interfaz
+    const liElement = document.createElement('li');
+
+    liElement.innerHTML = liTemplate;
+    ulElement.appendChild(liElement);
+  };
+
+  const printListadoPost = (posts) => {
+    ulElement.innerHTML = '';
+    posts.forEach((post) => {
+      printPost(post);
+    });
+  };
+  // listado
+  const db = firebase.firestore();
+  db.collection('posts').orderBy('fecha', 'desc').onSnapshot((querySnapshot) => {
+    const posts = [];
+    querySnapshot.forEach((doc) => {
+      posts.push(doc.data());
+    });
+    printListadoPost(posts);
   });
   return sectionElement;
 };
