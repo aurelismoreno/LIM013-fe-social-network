@@ -2,8 +2,8 @@
 // Este main.js se va a ejcutar cuando se inicialice o
 // cuando se haga un load o una recarga de nuestra pagina
 //--------------------------------------------------------
-import { changeView } from './controller/route.js';
-import { currentUser } from './controller/controller-firebase.js';
+import { changeView } from './view-controller/route.js';
+import { currentUser } from './controller/controller-firebase-auth.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {

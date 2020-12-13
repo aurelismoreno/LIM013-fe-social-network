@@ -4,7 +4,6 @@ import { components } from '../view/index.js';
 // Fucion para asociar vistas , que recibe la ruta que vamos a traer de
 
 export const changeView = (route, user) => {
-  // const id = hash.split('/')[1];
   const container = document.querySelector('#container');
   window.location.hash = route;
   container.innerHTML = '';
