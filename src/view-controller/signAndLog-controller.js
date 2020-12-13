@@ -1,13 +1,18 @@
-import { signIn, logIn } from '../controller/controller-firebase.js';
+/* eslint-disable no-unused-vars */
+import {
+  signIn,
+  logIn,
+  logInWithGoogle,
+} from '../controller/controller-firebase-auth.js';
 /* eslint-disable no-console */
 
 export const signAndLogController = {
-  actionVerSignIn: () => {
+  actionSeeSignIn: () => {
     document.getElementById('logInOptionForm').style.display = 'none';
     document.getElementById('signInOptionForm').style.display = 'block';
   },
 
-  actionVerLogIn: () => {
+  actionSeeLogIn: () => {
     document.getElementById('logInOptionForm').style.display = 'block';
     document.getElementById('signInOptionForm').style.display = 'none';
   },
@@ -15,7 +20,8 @@ export const signAndLogController = {
   actionSignIn: (sectionElement) => {
     const signInForm = sectionElement.querySelector('#signInForm');
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
-    const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
+    const signInPassword = sectionElement.querySelector('#signInPasswordInput')
+      .value;
     const signInER = document.getElementById('signInErroR');
     const signInPswER = document.getElementById('signInPswErroR');
 
@@ -58,7 +64,8 @@ export const signAndLogController = {
   actionLogIn: (sectionElement) => {
     const signInForm = sectionElement.querySelector('#signInForm');
     const logInEmail = sectionElement.querySelector('#logInEmailInput').value;
-    const logInPassword = sectionElement.querySelector('#logInPasswordInput').value;
+    const logInPassword = sectionElement.querySelector('#logInPasswordInput')
+      .value;
     const logInER = document.getElementById('logInErroR');
     const logInPswER = document.getElementById('logInPswErroR');
 
@@ -96,6 +103,20 @@ export const signAndLogController = {
           logInCustomER.innerHTML = errorMessage;
         }
         console.log(error);
+      });
+  },
+
+  actionLogInWithGoogle: (sectionElement) => {
+    const signInForm = sectionElement.querySelector('#signInForm');
+
+    logInWithGoogle()
+      .then((result) => {
+        window.location.hash = '#/home';
+        // console.log('google logIn');
+        signInForm.reset();
+      })
+      .catch((err) => {
+        console.log(err);
       });
   },
 };

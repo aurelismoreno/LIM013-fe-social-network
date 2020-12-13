@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="shortcut icon" type="image/x-icon" href="images/peicon.png">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Cosplay</title>
+    <title>COSplay</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="styleMobile.css" />
+    <link rel="stylesheet" href="styleNavBar.css" />
+    <link rel="stylesheet" href="styleSignAndLog.css" />
+    <link rel="stylesheet" href="styleSignAndLogMobile.css" />
+    <link rel="stylesheet" href="styleHome.css" />
+    <link rel="stylesheet" href="styleHomeMobile.css" />
+    <link rel="stylesheet" href="styleProfile.css" />  
+    <link rel="stylesheet" href="styleProfileMobile.css" /> 
+    <link rel="stylesheet" href="styleError404.css" /> 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   </head>
   <header></header>
   <body>
     <section class="container" id="container"></section>
 
-    <!--Firebase scripts-->
+    <!-- Export, Import modules-->
+    <script type="module" src="main.js"></script>
+
+    <!-- Firebase scripts-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
@@ -21,11 +33,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
 
-    <script type="module" src="main.js"></script>
   </body>
-  <footer class="footer">
-    @<span class="footerBold">COS</span>play |
-    <span class="footerBold">Developed by</span>: Team 4 | Social Network
-    |Laboratoria
-  </footer>
+  <footer></footer>
 </html>

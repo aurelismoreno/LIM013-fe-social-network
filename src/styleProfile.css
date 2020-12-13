@@ -1,0 +1,200 @@
+/**********defaultView Desktop (1562px x 920px)************************/
+/*
+body {
+    margin: auto;
+    padding: 20px, 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:  transparent;
+}
+ 
+.container {
+    width: 100%;
+    max-width: 1562px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:  #F4F1F1;
+}
+/*
+/**********profileView Desktop (1562px x 920px)***********************/
+
+.profileBodyWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color:  #F4F1F1;    
+}
+
+/**********main**********/
+.mainHome {
+    width: 35%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: none;
+}
+
+.newPostContainer {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+    
+.newPostForm {
+    width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+  
+.form-groupPost {
+    text-align: center;
+}
+  
+.newPostInputText {
+    width: 470px;  
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+}
+  
+.separator {
+    width: 490px;
+}
+  
+.callToAction {
+    text-align: right;
+}
+  
+.postButton {
+    width: 75px;
+    height: 25px;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: black;
+    border-radius: 5px;
+    background-color: black;
+    font-size: 12px;
+    color: white;
+    display: inline-block;
+}
+
+/**********aside left**********/
+.leftProfile {
+    width: 24%;
+    display: inline-block; 
+    background-color: none;
+}
+  
+.myProfileResume {
+    width: 100%;
+}
+  
+.heroPhoto {
+    width: 350px;
+    height: 239.5px;
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-image: url(images/hero_photo.jpg);
+    background-size: cover;
+}
+
+.userData {    
+    background-color: none;
+}
+
+.userPhoto {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    float: right;
+    background-image: url(images/logged_user_photo.png);
+    background-size: cover;
+}
+
+.userName {
+    width: 175px;
+    height: 50px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: none;
+}
+
+.myPhotos {
+    width: 350px;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.photoGroup {
+    width: 100%;
+}
+
+.photoMini {
+    width: 22%;
+    height: 57px;
+    background-image: url(images/hero_photo.jpg);
+    background-size: cover;
+}
+
+.contact {
+    width: 350px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(54, 4, 83);
+    box-shadow:3px 3px 5px grey;
+}
+
+.profileLinksMobile {
+    display: none;
+}
+
+.sepUserData {
+    width: 350px;
+}
+
+.footerSideText {
+    width: 300px;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(82, 83, 83);
+}
+
+/**********profileView Laptop (1280px x 802px)*************************/
+
+@media screen and (max-width: 1281px) {
+    /**********aside left**********/
+    .leftProfile {
+        margin-left: -6.5%;
+    }
+
+    .userData {    
+        margin-left: 60px;
+    }
+
+    .mainHome {
+        margin-left: 7%;
+    }
+}

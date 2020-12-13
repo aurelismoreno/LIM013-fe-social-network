@@ -5,65 +5,174 @@ import { homeController } from '../view-controller/home-controller.js';
 
 export default () => {
   const homeView = `
-  <header class="header">
-  <!-- Navigation bar -->
-  <section class="topnav">
-    <!--navigation logo y menu-->
-    <section class="flexNav">
-      <!--menu deploy-->
-      <section class="menu-deploy">
-        <i class="fa fa-bars"></i>
-      </section>
-      <!-- Links -->
-      <nav class="listItem" id="listItem">
-        <ul>
-          <li><a href="#/home">Home</a></li>
-          <li><a href="#/profile">Profile</a></li>
-        </ul>
-        <button type="button" id="signOutbutton">CERRAR SESION</button>
-      </nav>
-      <!-- Brand/Logo -->
-      <section class="logo">
-        <a class="navbar-brand">COSplay</a>
-      </section>
-      <!-- Log out -->
-      <section class="logout"></section>
+    <section class="homeBodyWrapper">
+      <aside class="leftHome">
+        <section class="myProfileTab">
+          <table class="linkTab">
+            <tr>
+              <td class="iconLeft">
+                <i class="fas fa-user-circle"></i>
+              </td>
+              <td class="rightText">
+                <p>LoggedUser</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="iconLeft">
+                <i class="fas fa-user-friends"></i>
+              </td>
+              <td class="rightText">
+                <p>Friends</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="iconLeft">
+                <i class="fas fa-users"></i>
+              </td>
+              <td class="rightText">
+                <p>Groups</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="iconLeft">
+                <i class="fas fa-video"></i>
+              </td>
+              <td class="rightText">
+                <p>Videos</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="iconLeft">
+                <i class="fas fa-calendar-day"></i>
+              </td>
+              <td class="rightText">
+                <p>Events</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="iconLeft">
+                <i class="fas fa-history"></i>
+              </td>
+              <td class="rightText">
+                <p>History</p>
+              </td>
+            </tr>          
+            <tr>
+              <th colspan="2" class="subtitle">My Accounts</th>
+            </tr>
+            <tr>
+              <td class="iconLeft">
+                <i class="fas fa-user-circle"></i>
+              </td>
+              <td class="rightText">
+                <p>MySecondaryAccount</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="iconLeftLast">
+                <i class="fas fa-user-circle"></i>
+              </td>
+              <td class="rightTextLast">
+                <p>MyTradingAccount</p>
+              </td>
+            </tr>
+          </table>
+          <table class="iconLinkTab">
+            <tr>
+              <td class="iconMobile">
+                <i class="fas fa-user-circle"></i>
+              </td>
+              <td class="iconMobile">
+                <i class="fas fa-user-friends"></i>
+              </td>
+              <td class="iconMobile">
+                <i class="fas fa-users"></i>
+              </td>
+              <td class="iconMobile">
+                <i class="fas fa-video"></i>
+              </td>
+              <td class="iconMobile">
+                <i class="fas fa-calendar-day"></i>
+              </td>
+              <td class="iconMobile">
+                <i class="fas fa-history"></i>
+              </td>
+            </tr>
+          </table>
+          <section class="bottom">
+            <hr class="sepUserData">
+            <p class="footerSideText">
+              @<span class="footerBold">COS</span>play |
+              <span class="footerBold">Developed by</span>: Team 4 | Social Network | Laboratoria | 2020
+            </p>
+          </section>
+        </section>
+      </aside>
+      <main class="mainHome">
+        <section class="newPostContainer" id="newPostContainer">
+          <form class="newPostForm" id="newPostForm">
+            <section class="form-groupPost">
+              <input type="text" placeholder="What have you been up to lately?" id="newPostText" name="newPostText" class="newPostInputText" ><br>
+              <hr class="separator">
+            </section>
+            <section class="form-groupPost">
+              <section class="callToAction">
+                <button type="button" class="postButton" id="postButton">POST</button>
+              </section>
+            </section>
+          </form>
+        </section>
+        <ul class="postList" id="postList"></ul>
+      </main>
+      <aside></aside>
     </section>
-  </section>
-</header>
-<main>
-  <form id="formPost">
-    <textarea id="postMensajeInput"></textarea>
-    <button type="button" id="publicartbutton">PUBLICAR</button>
-  </form>
-
-  <ul id="listado"></ul>
-</main>
-<aside></aside>
   `;
   // Insertando el template en la interfaz
   const sectionElement = document.createElement('section');
+  // sectionElement.classList.add('position');
   sectionElement.innerHTML = homeView;
 
-  // Accion del boton SignOut
-  const signOutButton = sectionElement.querySelector('#signOutbutton');
-  signOutButton.addEventListener('click', () => {
-    homeController.actionSignOut();
-  });
-
-  // Accion del boton publicar
-  const publicarBtn = sectionElement.querySelector('#publicartbutton');
-  publicarBtn.addEventListener('click', () => {
-    homeController.actionPublicar(sectionElement);
+  // Accion del boton POST (newPost)
+  const postBtn = sectionElement.querySelector('#postButton');
+  postBtn.addEventListener('click', () => {
+    homeController.actionPost(sectionElement);
   });
 
   // Pintando post en el home
-  const ulElement = sectionElement.querySelector('#listado');
+  const ulElement = sectionElement.querySelector('#postList');
   const printPost = (dataPost) => {
     const liTemplate = `
-            <h5>${dataPost.autor} -  ${dataPost.fecha} </h5>
-            <p>${dataPost.post}</p>
-        `;
+      <section class="postContainer">
+        <form class="postForm" id="postForm">
+          <section class="form-groupPost">
+            <table class="topUserData">
+              <tr class="topUDContainer">
+                <td class="iconLeftPost">
+                </td>
+                <td class="rightTextPost">
+                  <p class="loggedUsr">${dataPost.loggedUser}<br>
+                  <span class="postDate">${dataPost.date}</span></p>
+                </td>
+                <td class="deletePost">
+                  <button type="button" class="deletePostButton" id="deletePostButton"><i class="far fa-window-close"></i></button>
+                </td>
+              </tr>
+            </table>
+            <hr class="separator">
+          <section class="form-groupPost">
+            <p class="postInputTextContent">${dataPost.postTextContent}</p>
+            <hr class="separator">
+          </section>
+          <section class="form-groupPost">
+            <section class="otherUsersReaction">
+              <button type="button" class="likeButton" id="likeButton"></button>
+              <button type="button" class="shareButton" id="shareButton"></button>
+            </section>
+          </section>
+        </form>
+      </section>     
+    `;
+
     // Insertando el template en la interfaz
     const liElement = document.createElement('li');
 
@@ -71,20 +180,24 @@ export default () => {
     ulElement.appendChild(liElement);
   };
 
-  const printListadoPost = (posts) => {
+  const printPostList = (userPosts) => {
     ulElement.innerHTML = '';
-    posts.forEach((post) => {
+    userPosts.forEach((post) => {
       printPost(post);
     });
   };
+
   // listado
-  const db = firebase.firestore();
-  db.collection('posts').orderBy('fecha', 'desc').onSnapshot((querySnapshot) => {
-    const posts = [];
-    querySnapshot.forEach((doc) => {
-      posts.push(doc.data());
+  const fs = firebase.firestore();
+  fs.collection('userPosts')
+    .orderBy('date', 'desc')
+    .onSnapshot((querySnapshot) => {
+      const posts = [];
+      querySnapshot.forEach((doc) => {
+        posts.push(doc.data());
+      });
+      printPostList(posts);
     });
-    printListadoPost(posts);
-  });
+
   return sectionElement;
 };

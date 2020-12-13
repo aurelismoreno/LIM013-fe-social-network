@@ -3,12 +3,12 @@
 // Inicializa Cloud Firestore
 
 // Crea una colección nueva y un documento
-export const crearPost = (post, autor) => {
-  const db = firebase.firestore();
-  return db.collection('posts').add({
-    autor: autor,
-    post: post,
-    fecha: new Date().toISOString(),
+export const createPost = (post, author) => {
+  const fs = firebase.firestore();
+  return fs.collection('userPosts').add({
+    loggedUser: author,
+    postTextContent: post,
+    date: new Date().toISOString(),
   })
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);

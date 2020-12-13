@@ -19,10 +19,11 @@ global.firebase = firebasemock.MockFirebaseSdk(
 
 describe('Registro de usuario nuevo', () => {
   it('Debería ser una función', () => expect(typeof signIn).toBe('function'));
-  it('Debería crear un usuario', () => signIn('cosplay@gmail.com', '123456')
+  it('Debería crear un usuario', done => signIn('cosplay@gmail.com', '123456')
     .then((user) => {
       expect(user.email).toBe('cosplay@gmail.com');
       expect(user.password).toBe('123456');
+      done();
     }));
 });
 

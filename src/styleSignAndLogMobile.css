@@ -1,0 +1,417 @@
+/**********signAndLogView Tablet (768px x 1024px)**********************/
+
+@media screen and (max-width: 770px) {
+    .wrapperSignAndLog {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: white;
+    }
+  
+    .intro {
+      width: 80%;
+      margin-left: 10%;
+      margin-right: auto;
+      background-color: none;
+    }
+  
+    .wrapperSwitch {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .wrapperSwitch section:first-child {
+      order: 1;
+    }
+  
+    .videoIntro {
+      width: 100%;
+      margin-top: -20px;
+    }
+  
+    .video {
+      width: 614.4px;
+      height: 344.4px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: none;
+      padding-left: 0px;
+    }
+  
+    .punchStats {
+      display: none;
+    }
+  
+    .punchLine {
+      width: 52%;
+      margin-top: 0px;
+      text-align: left;
+      background-color: none;
+    }
+  
+    .punchStarter {
+      height: 55px;
+      font-size: 40px;
+      line-height: 0;
+      background-color: none;
+      width: 100%;
+      margin-left: 0px;
+    }
+  
+    .punchText {
+      height: 120px;
+      width: 100%;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: top;
+      background-color: none;
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+  
+    .join {
+      background-color: none;
+      vertical-align: top;
+      width: 100%;
+      margin-left: 0%;
+      margin-right: auto;
+      
+    }
+  
+    .ilustration {
+      width: 50%;
+      position: absolute;
+      background-color: none;
+    }
+  
+    .anime {
+      width: 325px;
+      height: 310px;
+      background-image: url(images/index_mayoi_neko.png);
+      background-size: 99%;
+      background-repeat: no-repeat;
+      z-index: 3;
+      margin-left: 360px;
+      margin-top: -212px;
+    }
+  
+    .home_form {
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      height: 720px;
+      width: 614.4px;
+      background-image: url(images/index_fondo_form.png);
+      background-size: 100%;
+      z-index: 1;
+    }
+  
+    .emptySpace {
+      height: 60px;
+      background-color: none;
+      z-index: 2;
+    }
+  
+    .formOptions {
+      background-color: none;
+      width: 450px;
+      height: 40px;
+      
+    }
+  
+    .logIn,
+    .signIn {
+      width: 225px;
+      background-color: none;
+      font-size: 14px;
+    }
+  
+    .logInOptionCell,
+    .signInOptionCell {
+      background-color: none;
+      width: 225px;
+    }
+  
+    .signInOptionButton,
+    .logInOptionButton {
+      width: 200px;
+      height: 30px;
+      font-size: 14px;
+    }
+  
+    .initForm {
+      width: 450px;
+      height: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .form-groupT {
+      width: 450px;
+      height: 60px;
+    }
+    
+    .formTitle {
+      font-size: 22px;
+      padding-top: 15px;
+    }
+  
+    .form-groupP {
+      width: 450px;
+      height: 40px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  
+    .form-groupS {
+      width: 450px;
+      height: 25px;
+      padding-top: 0px;
+      padding-bottom: 5px;
+    }
+  
+    .input {
+      width: 450px;
+      height: 40px;
+    }
+  
+    .signInErrorResponse,
+    .logInErrorResponse {  
+      font-size: 14px;
+    }
+  
+    .logInButton,
+    .signInButton {
+      width: 455px;
+      height: 50px;
+    }
+  
+    .logInWith, 
+    .signInWith {
+      text-align: center;
+      font-size: 18px;
+    }
+  
+    .logInWithFacebookButton,
+    .signInWithFacebookButton {
+      width: 455px;
+      height: 45px;
+    }
+  
+    .logInCustomErrorResponse,
+    .signInCustomErrorResponse {
+      font-size: 14px;  
+    }
+  
+    .formFooter {
+      width: 450px;
+      height: 45px;
+    }
+  
+    .logo {
+      font-size: 30px;
+    }
+  
+    .footer {
+      width: 90%;
+      font-size: 18px;
+      margin-left: 5%;
+      margin-right: auto;
+    }
+  }
+  
+  /**********signAndLogView Mobile (360px x 640px)***********************/
+  /**********signAndLogView Mobile mini (320px x 480px)******************/
+  
+  @media screen and (max-width: 365px) {
+      .intro {
+        width: 100%;
+        margin-left: 0%;
+      }
+  
+      .video {
+        width: 100%;
+        height: 203.8px;
+      }
+    
+      .punchStats {
+        display: none;
+      }
+    
+      .punchLine {
+        width: 35%;
+        text-align: left;
+        margin-left: 5px;
+        background-color: none;
+      }
+    
+      .punchStarter {
+        width: 100%;
+        height: 55px;
+        font-size: 20px;
+        line-height: 60%;
+        background-color: none;
+        display: inline-block;
+        margin-top: -10px;
+        margin-left: 18px;
+      }
+    
+      .punchText {
+        height: 120px;
+        width: 100%;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: top;
+        background-color: none;
+        display: inline-block;
+        margin-left: 18px;
+        margin-top: -10px;
+      }
+    
+      .join {
+        background-color: none;
+        vertical-align: top;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+      }
+    
+      .ilustration {
+        width: 55%;
+        position: absolute;
+        background-color: none;
+      }
+    
+      .anime {
+        width: 215px;
+        height: 200px;
+        background-image: url(images/index_mayoi_neko.png);
+        background-size: 99%;
+        background-repeat: no-repeat;
+        z-index: 3;
+        margin-left: 140px;
+        margin-top: -160px;
+      }
+    
+      .home_form {
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 0px;      
+        height: 380px;
+        background-image: url(images/index_fondo_form.png);
+        background-size: 100%;
+        z-index: 1;
+      }
+    
+      .emptySpace {
+        height: 45px;
+        background-color: none;
+        z-index: 2;
+      }
+    
+      .formOptions {
+        width: 220px;
+        height: 30px;
+        
+      }
+    
+      .logIn,
+      .signIn {
+        width: 110px;
+        background-color: none;
+        font-size: 12px;
+      }
+    
+      .logInOptionCell,
+      .signInOptionCell {
+        background-color: none;
+        width: 110px;
+      }
+    
+      .signInOptionButton,
+      .logInOptionButton {
+        width: 80px;
+        height: 20px;
+        font-size: 12px;
+      }
+    
+      .initForm {
+        width: 220px;
+        height: 280px;
+        margin-left: 18%;
+      }
+    
+      .form-groupT {
+        width: 220px;
+        height: 30px;
+      }
+      
+      .formTitle {
+        font-size: 16px;
+        padding-top: 6px;
+      }
+    
+      .form-groupP {
+        width: 220px;
+        height: 30px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+    
+      .form-groupS {
+        width: 220px;
+        height: 15px;
+        padding-top: 0px;
+        padding-bottom: 5px;
+      }
+    
+      .input {
+        width: 220px;
+        height: 30px;
+      }
+    
+      .signInErrorResponse,
+      .logInErrorResponse {  
+        font-size: 12px;
+      }
+    
+      .logInButton,
+      .signInButton {
+        width: 225px;
+        height: 35px;
+      }
+    
+      .logInWith, 
+      .signInWith {
+        text-align: center;
+        font-size: 14px;
+      }
+    
+      .logInWithFacebookButton,
+      .signInWithFacebookButton {
+        width: 225px;
+        height: 35px;
+      }
+    
+      .logInCustomErrorResponse,
+      .signInCustomErrorResponse {
+        font-size: 12px;  
+      }
+    
+      .formFooter {
+        width: 220px;
+        height: 40px;
+        margin-left: 18%;
+      }
+    
+      .logo {
+        font-size: 22px;
+      }
+  
+      .footer {
+        width: 80%;
+        font-size: 12px;
+        margin-left: 10%;
+      }
+  }

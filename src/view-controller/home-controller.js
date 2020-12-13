@@ -1,26 +1,20 @@
 /* eslint-disable no-alert */
-import { signOut, currentUser } from '../controller/controller-firebase.js';
-import { crearPost } from '../controller/controller-firestore.js';
+import { currentUser } from '../controller/controller-firebase-auth.js';
+import { createPost } from '../controller/controller-firebase-fs.js';
 /* eslint-disable no-console */
 
 export const homeController = {
-  actionSignOut: () => {
-    signOut().then(() => {
-      window.location.hash = '#/';
-    });
-  },
-
-  actionPublicar: (sectionElement) => {
-    const postTexto = sectionElement.querySelector('#postMensajeInput').value;
+  actionPost: (sectionElement) => {
+    const postText = sectionElement.querySelector('#newPostText').value;
     const user = currentUser();
 
-    if (postTexto === '') {
+    if (postText === '') {
       return;
     }
 
-    crearPost(postTexto, user.email)
+    createPost(postText, user.email)
       .then(() => {
-        const formPost = sectionElement.querySelector('#formPost');
+        const formPost = sectionElement.querySelector('#newPostForm');
         formPost.reset();
       })
       .catch((error) => {

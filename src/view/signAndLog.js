@@ -1,10 +1,12 @@
+/* eslint-disable no-undef */
 import { signAndLogController } from '../view-controller/signAndLog-controller.js';
 
 export default () => {
   const signAndLogView = `
+  <section class="wrapperSignAndLog">
     <header></header>
     <main class="intro">
-      <section class="wrapper">
+      <section class="wrapperSwitch">
         <section class="punchLine">
           <section class="punchStarter">
             <h2>Why?</h2>
@@ -44,9 +46,9 @@ export default () => {
           </table>
         </section>
         <section class="videoIntro">
-        <iframe class="video" width="882" height="495" src="https://www.youtube.com/embed/hVwKdMpXrx0" 
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
-        picture-in-picture" allowfullscreen></iframe>         
+          <iframe class="video" width="912" height="511.8" src="https://www.youtube.com/embed/hVwKdMpXrx0" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+          picture-in-picture" allowfullscreen></iframe>         
         </section>
       </section>
     </main>
@@ -90,7 +92,7 @@ export default () => {
               <p class= "logInWith">or</p>
             </section>
             <section class="form-groupP">
-              <button type="button" class="logInWithFacebookButton">LOG IN WITH FACEBOOK</button>
+              <button type="button" class="logInWithFacebookButton" id="googleLogin">LOG IN WITH GOOGLE</button>
             </section>
             <section class="form-groupS">
               <p class="logInCustomErrorResponse" id="logInCustomErroR"></p>
@@ -129,7 +131,7 @@ export default () => {
               <p class="signInWith">or</p>
             </section>
             <section class="form-groupP">
-              <button type="button" class="signInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
+              <button type="button" class="signInWithFacebookButton">SIGN IN WITH GOOGLE</button>
             </section>
             <section class="form-groupS">
               <p class="signInCustomErrorResponse" id="signInCustomErroR"></p>
@@ -141,28 +143,34 @@ export default () => {
         <p class="logo"><span class="logoBold">COS</span>play</p>
       </section>
     </aside>
-  `;
+    <footer class="footer">@<span class="footerBold">COS</span>play |
+      <span class="footerBold">Developed by</span>: Team 4 | Social Network |Laboratoria
+    </footer>
+  </section>
+`;
 
   // Insertando el template en la interfaz
+  // document.getElementById('container').classList.add('container');
   const sectionElement = document.createElement('section');
+  // sectionElement.classList.add('position')
   sectionElement.innerHTML = signAndLogView;
 
   // Mostrando solo el formulario de LOG IN al cargar la página
   window.onload = () => {
-    signAndLogController.actionVerLogIn();
+    signAndLogController.actionSeeLogIn();
   };
 
   // Selecionando el toggle de formulario LOG IN/SIGN IN
   const signInOpBtn = sectionElement.querySelector('#signInOptionButton');
 
   signInOpBtn.addEventListener('click', () => {
-    signAndLogController.actionVerSignIn();
+    signAndLogController.actionSeeSignIn();
   });
 
   const logInOpBtn = sectionElement.querySelector('#logInOptionButton');
 
   logInOpBtn.addEventListener('click', () => {
-    signAndLogController.actionVerLogIn();
+    signAndLogController.actionSeeLogIn();
   });
 
   // Sign In Acciones de los botones
@@ -178,5 +186,13 @@ export default () => {
   logInbtn.addEventListener('click', () => {
     signAndLogController.actionLogIn(sectionElement);
   });
+
+  // Google logIn
+  const googleLoginBtn = sectionElement.querySelector('#googleLogin');
+
+  googleLoginBtn.addEventListener('click', () => {
+    signAndLogController.actionLogInWithGoogle(sectionElement);
+  });
+
   return sectionElement;
 };
