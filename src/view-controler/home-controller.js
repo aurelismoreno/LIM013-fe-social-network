@@ -19,7 +19,7 @@ export const homeController = {
       })
       .catch((error) => {
         console.log(error);
-        alert('Ócurrio un error intentando crear tu publicacion');
+        alert('An error happened when creating your post');
       });
   },
 };
