@@ -26,7 +26,7 @@ export const logInWithGoogle = () => {
   return auth.signInWithPopup(provider);
 };
 
-// salir de la aplicación
+// Cerrar sesion
 export const logOut = () => {
   const auth = firebase.auth();
   return auth.signOut();
