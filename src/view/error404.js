@@ -17,10 +17,10 @@ export default () => {
       </footer>
     <section>
     `;
-
+  
   // Insertando el template en la interfaz
   const sectionElement = document.createElement('section');
-  // sectionElement.classList.add('position');
+  //sectionElement.classList.add('position');
   sectionElement.setAttribute('id', 'message');
   sectionElement.innerHTML = error404View;
 
@@ -28,7 +28,7 @@ export default () => {
 
   goHomeBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    return (window.location.hash = '#/home');
+    return window.location.hash = '#/home';
   });
   return sectionElement;
 };

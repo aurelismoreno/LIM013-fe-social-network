@@ -129,7 +129,7 @@ export default () => {
   `;
   // Insertando el template en la interfaz
   const sectionElement = document.createElement('section');
-  // sectionElement.classList.add('position');
+  //sectionElement.classList.add('position');
   sectionElement.innerHTML = homeView;
 
   // Accion del boton POST (newPost)
@@ -189,15 +189,13 @@ export default () => {
 
   // listado
   const fs = firebase.firestore();
-  fs.collection('userPosts')
-    .orderBy('date', 'desc')
-    .onSnapshot((querySnapshot) => {
-      const posts = [];
-      querySnapshot.forEach((doc) => {
-        posts.push(doc.data());
-      });
-      printPostList(posts);
+  fs.collection('userPosts').orderBy('date', 'desc').onSnapshot((querySnapshot) => {
+    const posts = [];
+    querySnapshot.forEach((doc) => {
+      posts.push(doc.data());
     });
-
+    printPostList(posts);
+  });
+  
   return sectionElement;
 };
