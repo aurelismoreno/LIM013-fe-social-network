@@ -52,21 +52,22 @@ export default () => {
       </section>
     </header>
   `;
-
+    
   // Insertando el template en la interfaz
   const sectionElement = document.createElement('section');
-  // sectionElement.classList.add('position');
+  //sectionElement.classList.add('position');
   sectionElement.innerHTML = navBarView;
-
+  
   // Log Out
   const logOut = sectionElement.querySelector('#logOut');
 
   logOut.addEventListener('click', (e) => {
     e.preventDefault();
-    exit().then(() => {
-      window.location.hash = '#/';
-      console.log('Sign Out');
-    });
+    exit()
+      .then(() => {
+        window.location.hash = '#/';
+        console.log('Sign Out');
+      });
   });
 
   return sectionElement;

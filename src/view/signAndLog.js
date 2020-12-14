@@ -191,8 +191,8 @@ export default () => {
   const googleLoginBtn = sectionElement.querySelector('#googleLogin');
 
   googleLoginBtn.addEventListener('click', () => {
-    signAndLogController.actionLogInWithGoogle(sectionElement);
-  });
+    signAndLogController.actionLogInWithGoogle(sectionElement);      
+  }); 
 
   return sectionElement;
 };

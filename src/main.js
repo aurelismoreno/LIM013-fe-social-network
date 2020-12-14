@@ -20,6 +20,19 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 //-------------------------------------------------------------
+/*
+// Funcion para cambiar la url usando el evento "hashchange"
+const updateRoute = () => {
+  const user = currentUser();
+  // 'location' es una propiedad del objeto windowns que nos dice si la pagina ha cambiado
+  // ejecuta una funcion que escuha el cambio de la url
+  changeView(window.location.hash, user);
+  // para traer todo lo que esta despues del #
+};
+
+// cada vez que escuches que haya una recarga ejecutame esta funcion
+window.addEventListener('load', init);
+*/
 
 // Funcion para cambiar la url usando el evento "hashchange"
 const updateRoute = () => {
